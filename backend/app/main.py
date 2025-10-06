@@ -1,8 +1,8 @@
 from contextlib import asynccontextmanager
 
-from fastapi import FastAPI
-
+from app.api.routes import auth
 from app.core.database import Base, engine
+from fastapi import FastAPI
 
 
 @asynccontextmanager
@@ -14,6 +14,8 @@ async def lifespan(app: FastAPI):
 
 
 app = FastAPI(title="Framework Foundry Core API", lifespan=lifespan)
+
+app.include_router(auth.router, prefix="/auth", tags=["auth"])
 
 
 @app.get("/")

@@ -1,11 +1,10 @@
 import logging
 import time
 
+from app.core.config import settings
 from sqlalchemy import create_engine, text
 from sqlalchemy.exc import OperationalError
 from sqlalchemy.orm import declarative_base, sessionmaker
-
-from app.core.config import settings
 
 logger = logging.getLogger(__name__)
 
@@ -34,7 +33,7 @@ def create_engine_with_retry(
                 )  # Exponential backoff, max 10 seconds
             else:
                 logger.error(
-                    f"Failed to connect to database after {max_retries} attempts"
+                    f"Failed to connect to database after {max_retries} " f"attempts"
                 )
                 raise
 

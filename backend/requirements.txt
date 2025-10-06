@@ -11,4 +11,7 @@ httpx
 black
 isort
 flake8
+python-jose[cryptography]
+passlib[argon2]
+email-validator
 
