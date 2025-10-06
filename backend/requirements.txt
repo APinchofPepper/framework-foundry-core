@@ -8,4 +8,7 @@ pydantic
 pytest
 pydantic-settings
 httpx
+black
+isort
+flake8
 

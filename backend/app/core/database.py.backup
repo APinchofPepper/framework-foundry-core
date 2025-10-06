@@ -27,7 +27,6 @@ def create_engine_with_retry(
                 logger.warning(
                     f"Database connection attempt {attempt + 1} failed: {e}. "
                     f"Retrying in {retry_delay} seconds..."
-                )
                 time.sleep(retry_delay)
                 retry_delay = min(
                     retry_delay * 1.5, 10.0

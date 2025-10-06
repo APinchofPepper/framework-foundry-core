@@ -1,7 +1,9 @@
 from contextlib import asynccontextmanager
+
 from fastapi import FastAPI
+
 from app.core.database import Base, engine
-from app.models.user import User  # Import the User model
+
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
@@ -10,7 +12,9 @@ async def lifespan(app: FastAPI):
     yield
     # Shutdown (if needed)
 
+
 app = FastAPI(title="Framework Foundry Core API", lifespan=lifespan)
+
 
 @app.get("/")
 def root():
