@@ -1,6 +1,6 @@
 from contextlib import asynccontextmanager
 
-from app.api.routes import auth
+from app.api.routes import auth, users
 from app.core.database import Base, engine
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
@@ -16,6 +16,9 @@ async def lifespan(app: FastAPI):
 
 app = FastAPI(title="Framework Foundry Core API", lifespan=lifespan)
 
+app.include_router(users.router, prefix="/users", tags=["users"])
+app.include_router(auth.router, prefix="/auth", tags=["auth"])
+
 # Add CORS middleware
 app.add_middleware(
     CORSMiddleware,
@@ -24,8 +27,6 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
-
-app.include_router(auth.router, prefix="/auth", tags=["auth"])
 
 
 @app.get("/")
