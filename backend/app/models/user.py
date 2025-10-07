@@ -1,5 +1,12 @@
-from app.core.database import Base
-from sqlalchemy import Boolean, Column, Integer, String
+import enum
+
+from app.db import Base
+from sqlalchemy import Boolean, Column, Enum, Integer, String
+
+
+class UserRole(str, enum.Enum):
+    user = "user"
+    admin = "admin"
 
 
 class User(Base):
@@ -10,3 +17,4 @@ class User(Base):
     hashed_password = Column(String, nullable=False)
     full_name = Column(String, nullable=True)
     is_active = Column(Boolean, default=True)
+    role = Column(Enum(UserRole), default=UserRole.user)
