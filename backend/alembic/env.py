@@ -9,7 +9,8 @@ from sqlalchemy import engine_from_config, pool
 sys.path.append(os.path.join(os.path.dirname(__file__), ".."))
 
 # Import your models
-from app.core.database import Base  # noqa: E402
+from app.db import Base  # noqa: E402
+from app.models.notification import Notification  # noqa: E402, F401
 from app.models.user import User  # noqa: E402, F401
 
 # this is the Alembic Config object, which provides

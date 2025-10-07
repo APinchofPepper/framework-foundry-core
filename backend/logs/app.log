@@ -64,3 +64,6 @@ WHERE users.email = %(email_1)s
 2025-10-07 00:47:14,435 - INFO - User logged in: jackmustonen123@gmail.com
 2025-10-07 00:47:14,452 - ERROR - Email sending failed: [Errno -2] Name or service not known
 2025-10-07 00:47:14,462 - INFO - User profile accessed: jackmustonen123@gmail.com
+2025-10-07 00:52:56,416 - INFO - User profile accessed: jackmustonen123@gmail.com
+2025-10-07 01:01:24,724 - INFO - User logged in: test@example.com
+2025-10-07 01:01:24,752 - ERROR - Email sending failed: [Errno -2] Name or service not known

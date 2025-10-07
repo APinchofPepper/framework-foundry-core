@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { useAuthStore } from "../store/authStore";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import Notifications from "../components/Notifications";
+
 
 export default function Dashboard() {
   const { token, logout } = useAuthStore();
@@ -38,6 +40,8 @@ export default function Dashboard() {
     <div className="min-h-screen bg-gray-50 p-6">
       <div className="max-w-4xl mx-auto bg-white shadow-lg rounded-xl p-6">
         <h1 className="text-2xl font-bold mb-4">Welcome, {user.full_name || user.email}!</h1>
+        
+        {user && <Notifications />}
 
         {user.role === "admin" && adminStats && (
           <div className="mb-6 p-4 bg-gray-100 rounded">
