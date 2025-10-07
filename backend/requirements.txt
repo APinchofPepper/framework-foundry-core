@@ -14,4 +14,5 @@ flake8
 python-jose[cryptography]
 passlib[argon2]
 email-validator
+pytz
 

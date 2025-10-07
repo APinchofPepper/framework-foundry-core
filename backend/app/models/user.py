@@ -1,7 +1,8 @@
 import enum
+from datetime import datetime
 
 from app.db import Base
-from sqlalchemy import Boolean, Column, Enum, Integer, String
+from sqlalchemy import Boolean, Column, DateTime, Enum, Integer, String
 
 
 class UserRole(str, enum.Enum):
@@ -18,3 +19,5 @@ class User(Base):
     full_name = Column(String, nullable=True)
     is_active = Column(Boolean, default=True)
     role = Column(Enum(UserRole), default=UserRole.user)
+    created_at = Column(DateTime, default=datetime.utcnow)
+    updated_at = Column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)

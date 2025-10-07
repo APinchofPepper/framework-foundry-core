@@ -1,0 +1,66 @@
+2025-10-07 00:32:01,868 - ERROR - Unexpected error during registration for testuser123@example.com: (psycopg2.errors.UndefinedTable) relation "users" does not exist
+LINE 2: FROM users 
+             ^
+
+[SQL: SELECT users.id AS users_id, users.email AS users_email, users.hashed_password AS users_hashed_password, users.full_name AS users_full_name, users.is_active AS users_is_active, users.role AS users_role, users.created_at AS users_created_at, users.updated_at AS users_updated_at 
+FROM users 
+WHERE users.email = %(email_1)s 
+ LIMIT %(param_1)s]
+[parameters: {'email_1': 'testuser123@example.com', 'param_1': 1}]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+2025-10-07 00:32:37,021 - INFO - New user registered: testuser123@example.com
+2025-10-07 00:32:37,067 - ERROR - Email sending failed: [Errno -2] Name or service not known
+2025-10-07 00:32:41,316 - INFO - User logged in: testuser123@example.com
+2025-10-07 00:32:41,364 - ERROR - Email sending failed: [Errno -2] Name or service not known
+2025-10-07 00:32:46,915 - INFO - User profile accessed: testuser123@example.com
+2025-10-07 00:33:56,852 - WARNING - Failed login attempt: admin@test.com
+2025-10-07 00:36:16,260 - INFO - New user registered: admin@frameworkfoundry.com
+2025-10-07 00:36:16,304 - ERROR - Email sending failed: [Errno -2] Name or service not known
+2025-10-07 00:36:27,247 - INFO - User logged in: admin@frameworkfoundry.com
+2025-10-07 00:36:27,294 - ERROR - Email sending failed: [Errno -2] Name or service not known
+2025-10-07 00:36:33,302 - INFO - Admin stats accessed by: admin@frameworkfoundry.com
+2025-10-07 00:37:13,656 - INFO - User logged in: admin@frameworkfoundry.com
+2025-10-07 00:37:13,702 - ERROR - Email sending failed: [Errno -2] Name or service not known
+2025-10-07 00:38:11,719 - WARNING - Failed login attempt: mustonej@oregonstate.edu
+2025-10-07 00:38:12,979 - WARNING - Failed login attempt: mustonej@oregonstate.edu
+2025-10-07 00:38:17,859 - INFO - New user registered: mustonej@oregonstate.edu
+2025-10-07 00:38:17,907 - ERROR - Email sending failed: [Errno -2] Name or service not known
+2025-10-07 00:38:20,400 - INFO - User logged in: mustonej@oregonstate.edu
+2025-10-07 00:38:20,447 - ERROR - Email sending failed: [Errno -2] Name or service not known
+2025-10-07 00:40:36,624 - WARNING - Failed login attempt: mustonej@oregonstate.edu
+2025-10-07 00:40:42,758 - INFO - User logged in: admin@frameworkfoundry.com
+2025-10-07 00:40:42,805 - ERROR - Email sending failed: [Errno -2] Name or service not known
+2025-10-07 00:40:42,818 - INFO - User profile accessed: admin@frameworkfoundry.com
+2025-10-07 00:40:53,248 - INFO - New user registered: testuser@example.com
+2025-10-07 00:40:53,269 - ERROR - Email sending failed: [Errno -2] Name or service not known
+2025-10-07 00:41:15,224 - INFO - New user registered: jackmustonen123@gmail.com
+2025-10-07 00:41:15,270 - ERROR - Email sending failed: [Errno -2] Name or service not known
+2025-10-07 00:41:20,505 - INFO - User logged in: jackmustonen123@gmail.com
+2025-10-07 00:41:20,552 - ERROR - Email sending failed: [Errno -2] Name or service not known
+2025-10-07 00:41:35,461 - INFO - User profile accessed: jackmustonen123@gmail.com
+2025-10-07 00:41:39,863 - INFO - User profile accessed: jackmustonen123@gmail.com
+2025-10-07 00:41:48,818 - INFO - User logged in: mustonej@oregonstate.edu
+2025-10-07 00:41:48,864 - ERROR - Email sending failed: [Errno -2] Name or service not known
+2025-10-07 00:41:57,031 - INFO - User profile accessed: mustonej@oregonstate.edu
+2025-10-07 00:42:04,650 - INFO - User profile accessed: jackmustonen123@gmail.com
+2025-10-07 00:42:33,177 - INFO - User profile accessed: jackmustonen123@gmail.com
+2025-10-07 00:42:33,744 - INFO - User profile accessed: jackmustonen123@gmail.com
+2025-10-07 00:42:34,114 - INFO - User profile accessed: jackmustonen123@gmail.com
+2025-10-07 00:42:39,800 - INFO - User logged in: jackmustonen123@gmail.com
+2025-10-07 00:42:39,847 - ERROR - Email sending failed: [Errno -2] Name or service not known
+2025-10-07 00:42:39,855 - INFO - User profile accessed: jackmustonen123@gmail.com
+2025-10-07 00:44:47,901 - ERROR - Unexpected error during login for jackmustonen123@gmail.com: (psycopg2.errors.UndefinedTable) relation "users" does not exist
+LINE 2: FROM users 
+             ^
+
+[SQL: SELECT users.id AS users_id, users.email AS users_email, users.hashed_password AS users_hashed_password, users.full_name AS users_full_name, users.is_active AS users_is_active, users.role AS users_role, users.created_at AS users_created_at, users.updated_at AS users_updated_at 
+FROM users 
+WHERE users.email = %(email_1)s 
+ LIMIT %(param_1)s]
+[parameters: {'email_1': 'jackmustonen123@gmail.com', 'param_1': 1}]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+2025-10-07 00:47:11,227 - INFO - New user registered: jackmustonen123@gmail.com
+2025-10-07 00:47:11,283 - ERROR - Email sending failed: [Errno -2] Name or service not known
+2025-10-07 00:47:14,435 - INFO - User logged in: jackmustonen123@gmail.com
+2025-10-07 00:47:14,452 - ERROR - Email sending failed: [Errno -2] Name or service not known
+2025-10-07 00:47:14,462 - INFO - User profile accessed: jackmustonen123@gmail.com

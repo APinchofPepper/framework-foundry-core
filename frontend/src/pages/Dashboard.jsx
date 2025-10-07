@@ -50,7 +50,17 @@ export default function Dashboard() {
           </div>
         )}
 
-        <p className="mb-6">You are logged in 🎉</p>
+        <div className="mb-6">
+          <p className="mb-2">You are logged in 🎉</p>
+          {user.created_at_formatted && (
+            <div className="text-sm text-gray-600">
+              <p>Member since: {user.created_at_formatted}</p>
+              {user.updated_at_formatted && user.updated_at_formatted !== user.created_at_formatted && (
+                <p>Last updated: {user.updated_at_formatted}</p>
+              )}
+            </div>
+          )}
+        </div>
         <button
           onClick={logout}
           className="bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700"

@@ -1,4 +1,6 @@
-from pydantic import BaseModel, EmailStr
+from datetime import datetime
+
+from pydantic import BaseModel, EmailStr, computed_field
 
 
 class UserBase(BaseModel):
@@ -25,6 +27,23 @@ class UserLogin(BaseModel):
 class UserOut(UserBase):
     id: int
     is_active: bool
+    role: str
+    created_at: datetime
+    updated_at: datetime
+
+    @computed_field
+    @property
+    def created_at_formatted(self) -> str:
+        from app.core.utils import format_datetime
+
+        return format_datetime(self.created_at)
+
+    @computed_field
+    @property
+    def updated_at_formatted(self) -> str:
+        from app.core.utils import format_datetime
+
+        return format_datetime(self.updated_at)
 
     class Config:
         from_attributes = True

@@ -1,9 +1,12 @@
-.PHONY: up down build logs shell test fmt lint clean
+.PHONY: up down down-clean build logs shell test fmt lint clean migrate
 
 up:
 	docker compose up --build
 
 down:
+	docker compose down
+
+down-clean:
 	docker compose down -v
 
 build:
@@ -27,3 +30,6 @@ lint:
 
 clean:
 	docker system prune -f
+
+migrate:
+	docker compose exec backend alembic upgrade head
